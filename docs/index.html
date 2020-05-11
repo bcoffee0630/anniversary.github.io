@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="為表祝賀《決戰！平安京》陰陽寮「夜雪羽」創建二週年，寮辦特此設立週年紀念網站">
+    <meta name="keywords" content="夜雪羽, 週年紀念網站">
+    <meta name="author" content="Bcoffee">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="Image/ico.png">
+    <link rel="stylesheet" href="Style.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <title>夜雪羽週年紀念網頁</title>
+</head>
+<body>
+    <div id="Background"></div>
+
+    <div class="Container Home HomePage" alt="MainLogo">
+        <img src="Image/Main.png" alt="2AnniversaryLogo">
+    </div>
+    
+    <div class="Container About">
+        <div class="Content">
+            <h1>關於</h1>
+            <p>夜雪羽是從《陰陽師》延伸至《決戰平安京》的陰陽寮，秉持讓寮友以較慢的步調去享受遊戲所帶來的樂趣而創建的休閒型寮辦。</p>
+            <p>寮辦名為「夜雪羽」的意思是「是夜，落羽飄零如雪」，形容夜裡輕輕飄落的白羽宛如雪花般皎潔且輕盈。命名時因一首《髮如雪》而萌生靈感，故使用了這個名字。</p>
+            <p>同時，也意味著希望加入寮辦的寮友們能放鬆心情地去享受遊戲，從中體會到遊戲的美好。</p>
+        </div>
+    </div>
+
+    <div class="Container Feel">
+        <div class="Content">
+            <h1>感想</h1>
+            <p>時光飛逝，轉瞬之間已然過了兩年之久。</p>
+            <p>由衷地感謝各位，陪伴寮辦走過了那麼長的道路。</p>
+            <p>雖說礙於課業，與大家的交流並不頻繁；不過每一次看見各位在聊天室裡的對話，總會不禁感到一絲心情愉悅。</p>
+            <p>也由衷地感謝願意自發提出聚餐的寮友，多虧了他們悉心的安排，讓參與聚餐的寮友們得以盡興而歸，這讓我感到有些意外、也很是高興。</p>
+            <p>最後，今年是《決戰平安京》的夜雪羽創寮二週年，祝願寮友們諸事順心、如意，也在這裡說句：二週年快樂！</p>
+        </div>
+    </div>
+
+    <div class="Container Gallery">
+        <div class="Gal">
+            <div class="Img"></div>
+            <p id="P01"></p>
+        </div>
+    </div>
+
+    <div class="Container Media">
+        <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/GB9WJfd61oQ?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="Footer">
+            <p>
+                Copyright © 2020 Bcoffee All rights reserved.
+            </p>
+        </div>
+    </div>
+
+    <div class="Ham">
+        <div id="bar"></div>
+        <div id="bar"></div>
+        <div id="bar"></div>
+    </div>
+
+    <div class="Nav">
+        <div class="Menu">
+            <a href="#" class="Pg01 pause-video">首頁</a>
+            <a href="#" class="Pg02 pause-video">關於</a>
+            <a href="#" class="Pg03 pause-video">感想</a>
+            <a href="#" class="Pg04 pause-video">相冊</a>
+            <a href="#" class="Pg05">視聽</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(".Ham").on("click", function(){
+            $(".Nav").toggleClass("changeNav");
+        })
+
+        $(".Pg01").on("click", function(){
+            $(".Home").toggleClass("HomePage", true);
+
+            $(".About").toggleClass("AboutPage", false);
+            $(".Feel").toggleClass("FeelPage", false);
+            $(".Gallery").toggleClass("GalleryPage", false);
+            $(".Media").toggleClass("MediaPage", false);
+        })
+
+        $(".Pg02").on("click", function(){
+            $(".About").toggleClass("AboutPage", true);
+
+            $(".About h1").toggleClass("About h1 anim", true);
+            $(".About p").toggleClass("About p anim", true);
+
+            $(".Home").toggleClass("HomePage", false);
+            $(".Feel").toggleClass("FeelPage", false);
+            $(".Gallery").toggleClass("GalleryPage", false);
+            $(".Media").toggleClass("MediaPage", false);
+        })
+
+        $(".Pg03").on("click", function(){
+            $(".Feel").toggleClass("FeelPage", true);
+
+            $(".Feel h1").toggleClass("Feel h1 anim", true);
+            $(".Feel p").toggleClass("Feel p anim", true);
+            
+            $(".Home").toggleClass("HomePage", false);
+            $(".About").toggleClass("AboutPage", false);
+            $(".Gallery").toggleClass("GalleryPage", false);
+            $(".Media").toggleClass("MediaPage", false);
+        })
+
+        $(".Pg04").on("click", function(){
+            $(".Gallery").toggleClass("GalleryPage", true);
+            
+            $(".Home").toggleClass("HomePage", false);
+            $(".About").toggleClass("AboutPage", false);
+            $(".Feel").toggleClass("FeelPage", false);
+            $(".Media").toggleClass("MediaPage", false);
+        })
+
+        $(".Pg05").on("click", function(){
+            $(".Media").toggleClass("MediaPage", true);
+            
+            $(".Home").toggleClass("HomePage", false);
+            $(".About").toggleClass("AboutPage", false);
+            $(".Feel").toggleClass("FeelPage", false);
+            $(".Gallery").toggleClass("GalleryPage", false);
+        })
+
+        $('a.pause-video').click(function(){
+            $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+        });
+    </script>
+
+</body>
+</html>

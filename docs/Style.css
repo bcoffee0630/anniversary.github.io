@@ -1,0 +1,715 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body{
+    background-color: #3d3d3d;
+}
+
+@font-face{
+    font-family: "Genjyuu-Light";
+    src: url(Font/GenJyuuGothic-Light.ttf);
+}
+
+@font-face{
+    font-family: "Genjyuu-ExLight";
+    src: url(Font/GenJyuuGothic-ExtraLight.ttf);
+}
+
+.Container{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home{
+    z-index: 0;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.HomePage{
+    z-index: 0;
+    opacity: 1;
+}
+
+.Home img{
+    height: auto;
+    max-width: 28%;
+}
+
+.About{
+    z-index: 1;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.AboutPage{
+    z-index: 1;
+    opacity: 1;
+}
+
+.Feel{
+    z-index: 2;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.FeelPage{
+    z-index: 2;
+    opacity: 1;
+}
+
+.Gallery{
+    z-index: 3;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.GalleryPage{
+    z-index: 3;
+    opacity: 1;
+}
+
+.Media{
+    z-index: 4;
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s ease-in-out;
+}
+
+.MediaPage{
+    z-index: 4;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#Background{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    background-image: url(Image/BG.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(3px) saturate(.75) grayscale(.2);
+}
+
+.Content{
+    height: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Content h1{
+    color: #ffffff;
+    font-family: "Genjyuu-Light";
+    font-size: 2.8vw;
+    font-weight: 550;
+    margin-bottom: 25px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.Content p{
+    color: #ffffff;
+    font-family: "Genjyuu-ExLight";
+    font-size: 1.5vw;
+    text-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    margin-bottom: 20px;
+}
+
+.Gal{
+    height: 400px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.Gal .Img{
+    border: 6px solid rgba(190, 190, 190, 1);
+    border-radius: 5px;
+    height: 90%;
+    max-width: 100%;
+    background-image: url(Image/01.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: FadeImg 12s ease-in-out infinite;
+}
+
+.Gal p:after{
+    content: "台中燒肉眾聚餐合影";
+    color: #ffffff;
+    font-family: "Genjyuu-ExLight";
+    font-size: 1.2vw;
+    animation: FadeText 12s ease-in-out infinite;
+}
+
+@keyframes FadeImg{
+    0%{
+        background-image: url(Image/01.png);
+    }
+    30%{
+        background-image: url(Image/01.png);
+    }
+    35%{
+        background-image: url(Image/02.png);
+    }
+    65%{
+        background-image: url(Image/02.png);
+    }
+    70%{
+        background-image: url(Image/03.png);
+    }
+    95%{
+        background-image: url(Image/03.png);
+    }
+    100%{
+        background-image: url(Image/01.png);
+    }
+}
+
+@keyframes FadeText{
+    0%{
+        content: "台中烏馬聚餐合影";
+    }
+    30%{
+        content: "台中烏馬聚餐合影";
+    }
+    35%{
+        content: "台中燒肉眾聚餐合影";
+    }
+    65%{
+        content: "台中燒肉眾聚餐合影";
+    }
+    70%{
+        content: "台中新時代小聚隨拍";
+    }
+    95%{
+        content: "台中新時代小聚隨拍";
+    }
+    100%{
+        content: "台中燒肉眾聚餐合影";
+    }
+}
+
+.Container.Media iframe{
+    border: 6px solid rgba(190, 190, 190, 1);
+    border-radius: 5px;
+    height: 400px;
+    width: 640px;
+}
+
+.Ham{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px 30px;
+    z-index: 1000;
+}
+
+#bar{
+    height: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    margin-bottom: 10px;
+    pointer-events: none;
+    transition: .2s ease-in-out;
+}
+
+.Ham:hover{
+    cursor: pointer;
+}
+
+.Ham:hover #bar{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.Nav{
+    height: 100vh;
+    width: 5%;
+    position: fixed;
+    top: 0;
+    right: -8%;
+    opacity: 0;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: 1s ease-in-out;
+}
+
+.changeNav{
+    right: 0;
+    opacity: 1;
+}
+
+.Menu{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Menu a{
+    color: rgba(255, 255, 255, .5);
+    font-family: "Genjyuu-ExLight";
+    font-size: 1.5vw;
+    text-align: right;
+    text-decoration: none;
+    margin: 25px 0;
+    transition: .2s ease-in-out;
+}
+
+.Menu a:hover{
+    color: rgba(255, 255, 255, 1);
+}
+
+.Footer{
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .8);
+    opacity: 0;
+    transition: .8s ease-in-out;
+    color: #ffffff;
+    font-family: "Genjyuu-ExLight";
+    font-size: 1.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer:hover{
+    height: 80px;
+    opacity: 1;
+}
+
+.About h1, .About p{
+    opacity: 0;
+    transform: translateY(-12%);
+}
+
+.About h1.anim{
+    animation: AboutFadeH1 .5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.About p.anim{
+    animation: AboutFadeP .5s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes AboutFadeH1{
+    0%{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes AboutFadeP{
+    0%{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.Feel h1, .Feel p{
+    opacity: 0;
+    transform: translateY(-20%);
+}
+
+.Feel h1.anim{
+    animation: AboutFadeH1 .5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.Feel p.anim{
+    animation: AboutFadeP .5s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes FeelFadeH1{
+    0%{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes FeelFadeP{
+    0%{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+/*For Ipad Pro*/
+@media only screen and (max-width: 1200px){
+    .Home img{
+        height: auto;
+        max-width: 45%;
+    }
+
+    #Background{
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        z-index: -1;
+        background-image: url(Image/BG.jpg);
+        background-position-x: 60%;
+        background-position-y: center;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: blur(3px) saturate(.75) grayscale(.2);
+    }
+
+    .Content h1{
+        color: #ffffff;
+        font-family: "Genjyuu-Light";
+        font-size: 42px;
+        font-weight: 550;
+        margin-bottom: 25px;
+        text-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    }
+    
+    .Content p{
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        font-size: 32px;
+        text-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        margin-bottom: 20px;
+    }
+
+    .Nav{
+        height: 100vh;
+        width: 10%;
+        position: fixed;
+        top: 0;
+        right: -8%;
+        opacity: 0;
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        transition: 1s ease-in-out;
+    }
+    
+    .changeNav{
+        right: 0;
+        opacity: 1;
+    }
+
+    .Menu{
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .Menu a{
+        color: rgba(255, 255, 255, .7);
+        font-family: "Genjyuu-ExLight";
+        font-size: 28px;
+        text-align: right;
+        text-decoration: none;
+        margin: 32px 0;
+    }
+
+    .Gal p:after{
+        content: "台中燒肉眾聚餐合影";
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        text-shadow: 0 0 3px rgba(0, 0, 0, .5);
+        font-size: 26px;
+        animation: FadeText 12s ease-in-out infinite;
+    }
+
+    .Footer{
+        position: absolute;
+        height: 75px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .8);
+        opacity: 1;
+        transition: .8s ease-in-out;
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/*For Ipad or Tablet*/
+@media only screen and (max-width: 800px){
+    .Content h1{
+        color: #ffffff;
+        font-family: "Genjyuu-Light";
+        font-size: 34px;
+        font-weight: 550;
+        margin-bottom: 25px;
+        text-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    }
+    
+    .Content p{
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        font-size: 24px;
+        text-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        margin-bottom: 20px;
+    }
+
+    .Nav{
+        height: 100vh;
+        width: 10%;
+        position: fixed;
+        top: 0;
+        right: -8%;
+        opacity: 0;
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        transition: 1s ease-in-out;
+    }
+    
+    .changeNav{
+        right: 0;
+        opacity: 1;
+    }
+    
+    .Menu a{
+        color: rgba(255, 255, 255, .7);
+        font-family: "Genjyuu-ExLight";
+        font-size: 23.5px;
+        text-align: right;
+        text-decoration: none;
+        margin: 32px 0;
+    }
+
+    .Gal p:after{
+        content: "台中燒肉眾聚餐合影";
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        text-shadow: 0 0 3px rgba(0, 0, 0, .5);
+        font-size: 24px;
+        animation: FadeText 12s ease-in-out infinite;
+    }
+
+    .Container.Media iframe{
+        border: 5px solid rgba(190, 190, 190, 1);
+        border-radius: 4px;
+        height: 325px;
+        width: 540px;
+    }
+}
+
+@media only screen and (max-height: 800px){
+    .Menu a{
+        color: rgba(255, 255, 255, .7);
+        font-family: "Genjyuu-ExLight";
+        font-size: 18px;
+        text-align: right;
+        text-decoration: none;
+        margin: 32px 0;
+    }
+
+    .Content h1{
+        color: #ffffff;
+        font-family: "Genjyuu-Light";
+        font-size: 28px;
+        font-weight: 550;
+        margin-bottom: 25px;
+        text-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    }
+    
+    .Content p{
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        font-size: 20px;
+        text-shadow: 0 0 8px rgba(0, 0, 0, .8);
+        margin-bottom: 20px;
+    }
+
+    .Gal p:after{
+        content: "台中燒肉眾聚餐合影";
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        text-shadow: 0 0 3px rgba(0, 0, 0, .5);
+        font-size: 20px;
+        animation: FadeText 12s ease-in-out infinite;
+    }
+}
+
+
+/*For Andriod and Iphone*/
+@media only screen and (max-width: 420px){
+    #Background{
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        z-index: -1;
+        background-image: url(Image/BG.jpg);
+        background-position-x: 70%;
+        background-position-y: center;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: blur(3px) saturate(.75) grayscale(.2);
+    }
+
+    .Content{
+        height: auto;
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Content h1{
+        color: #ffffff;
+        font-family: "Genjyuu-Light";
+        font-size: 20px;
+        font-weight: 550;
+        margin-bottom: 15px;
+        text-shadow: 0 0 5px rgba(0, 0, 0, .8);
+    }
+    
+    .Content p{
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        font-size: 13.5px;
+        text-shadow: 0 0 5px rgba(0, 0, 0, .8);
+        margin-bottom: 10px;
+    }
+
+    .Gal{
+        height: 220px;
+        width: 255px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .Gal p:after{
+        content: "台中燒肉眾聚餐合影";
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        text-shadow: 0 0 3px rgba(0, 0, 0, .5);
+        font-size: 12px;
+        animation: FadeText 12s ease-in-out infinite;
+    }
+
+    .Ham{
+        height: 24px;
+        width: 24px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 15px 15px;
+        z-index: 1000;
+    }
+    
+    #bar{
+        height: 2.2px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, .5);
+        margin-bottom: 5px;
+        pointer-events: none;
+        transition: .2s ease-in-out;
+    }
+    
+    .Nav{
+        height: 100vh;
+        width: 10%;
+        position: fixed;
+        top: 0;
+        right: -20%;
+        opacity: 0;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        transition: 1s ease-in-out;
+    }
+    
+    .changeNav{
+        right: 0;
+        opacity: 1;
+    }
+    
+    .Menu a{
+        color: rgba(255, 255, 255, .5);
+        font-family: "Genjyuu-ExLight";
+        font-size: 16px;
+        text-align: right;
+        text-decoration: none;
+        margin: 23px 0;
+        transition: .2s ease-in-out;
+    }
+
+    .Container.Media iframe{
+        border: 3px solid rgba(190, 190, 190, 1);
+        border-radius: 2px;
+        height: 185px;
+        width: 250px;
+    }
+
+    .Footer{
+        position: absolute;
+        height: 65px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .8);
+        opacity: 1;
+        transition: .8s ease-in-out;
+        color: #ffffff;
+        font-family: "Genjyuu-ExLight";
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
